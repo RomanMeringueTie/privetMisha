@@ -2,14 +2,24 @@
 
 void printFlags(void)
 {
-    if (registr & 0x3FF & 0x200)
-        printf("П\n");
-    if (registr & 0x1FF & 0x100)
-        printf("0\n");
-    if (registr & 0xFF & 0x80)
-        printf("М\n");
-    if (registr & 0x7F & 0x40)
-        printf("Т\n");
-    if (registr & 0x3F & 0x20)
+    if (flag & 0x10)
+        printf("П ");
+    else
+        printf("_ ");
+    if (flag & 0x8)
+        printf("0 ");
+    else
+        printf("_ ");
+    if (flag & 0x4)
+        printf("М ");
+    else
+        printf("_ ");
+    if (flag & 0x2)
+        printf("Т ");
+    else
+        printf("_ ");
+    if (flag & 0x1)
         printf("Е\n");
+    else
+        printf("_\n");
 }

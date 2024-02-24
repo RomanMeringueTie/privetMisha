@@ -2,6 +2,6 @@
 
 int sc_regInit(void)
 {
-    // flag = 0;
+    flag = 0;
     return 0;
 }

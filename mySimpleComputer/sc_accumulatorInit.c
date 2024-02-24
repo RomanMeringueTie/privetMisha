@@ -3,6 +3,6 @@
 
 int sc_accumulatorInit(void)
 {
-    registr = registr & 0x0001ffff;
+    accumulator = 0;
     return 0;
 }

@@ -2,5 +2,5 @@
 
 void printCounters(void)
 {
-    printf("%d\n", registr & 0x1fc00);
+    printf("%d\n", command);
 }

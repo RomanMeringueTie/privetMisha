@@ -2,5 +2,5 @@
 
 void printAccumulator(void)
 {
-    printf("%d\n", registr & 0x1fffc000);
+    printf("%d\n", accumulator);
 }

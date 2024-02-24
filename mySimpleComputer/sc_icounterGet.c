@@ -4,6 +4,6 @@ int sc_icounterGet(int *value)
 {
     if (value == NULL)
         return -1;
-    // *value = accumulator;
+    *value = command;
     return 0;
 }
