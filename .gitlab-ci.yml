@@ -13,4 +13,4 @@ check-format:
 build:
   stage: build
   script:
-    - build.sh
+    - sh build.sh
