@@ -1,33 +1,28 @@
-all:
-	touch console/pr01
-	touch /home/roman/architecture/mySimpleComputer/sc.o
-	touch /home/roman/architecture/mySimpleComputer/print.o
-	touch /home/roman/architecture/mySimpleComputer/sc_lib.a
-	touch /home/roman/architecture/console/pr01
+all: console/pr01
 
-# /home/roman/architecture/console/pr01: /home/roman/architecture/mySimpleComputer/main.c /home/roman/architecture/mySimpleComputer/sc_lib.a
-# 	gcc -g -Wall -I /home/roman/architecture/include/ -o /home/roman/architecture/console/pr01 /home/roman/architecture/mySimpleComputer/main.c /home/roman/architecture/mySimpleComputer/sc_lib.a
+console/pr01: mySimpleComputer/main.c mySimpleComputer/sc_lib.a
+	gcc -g -Wall -I include/ -o console/pr01 mySimpleComputer/main.c mySimpleComputer/sc_lib.a
 
-# /home/roman/architecture/mySimpleComputer/sc_lib.a: /home/roman/architecture/mySimpleComputer/sc*.o /home/roman/architecture/mySimpleComputer/print*.o
-# 	ar rcs /home/roman/architecture/mySimpleComputer/sc_lib.a /home/roman/architecture/mySimpleComputer/sc*.o /home/roman/architecture/mySimpleComputer/print*.o
+mySimpleComputer/sc_lib.a: mySimpleComputer/sc*.o mySimpleComputer/print*.o
+	ar rcs mySimpleComputer/sc_lib.a mySimpleComputer/sc*.o mySimpleComputer/print*.o
 
-# /home/roman/architecture/mySimpleComputer/print*.o: /home/roman/architecture/mySimpleComputer/print*.c
-# 	gcc -g -c -I /home/roman/architecture/include/ /home/roman/architecture/mySimpleComputer/print*.c
-# 	cp *.o /home/roman/architecture/mySimpleComputer
-# 	rm *.o
+mySimpleComputer/print*.o: mySimpleComputer/print*.c
+	gcc -g -c -I include/ mySimpleComputer/print*.c
+	cp *.o mySimpleComputer
+	rm *.o
 
-# /home/roman/architecture/mySimpleComputer/sc*.o: /home/roman/architecture/mySimpleComputer/sc*.c
-# 	gcc -g -c -I /home/roman/architecture/include/ /home/roman/architecture/mySimpleComputer/sc*.c
-# 	cp *.o /home/roman/architecture/mySimpleComputer
-# 	rm *.o
+mySimpleComputer/sc*.o: mySimpleComputer/sc*.c
+	gcc -g -c -I include/ mySimpleComputer/sc*.c
+	cp *.o mySimpleComputer
+	rm *.o
 
 .PHONY: clean
 
 clean:
-	rm /home/roman/architecture/mySimpleComputer/sc*.o
-	rm /home/roman/architecture/mySimpleComputer/print*.o
-	rm /home/roman/architecture/mySimpleComputer/sc_lib.a
-	rm /home/roman/architecture/console/pr01
+	rm mySimpleComputer/sc*.o
+	rm mySimpleComputer/print*.o
+	rm mySimpleComputer/sc_lib.a
+	rm console/pr01
 
 .PHONY: run
 
