@@ -1,4 +1,9 @@
-# all: /home/roman/architecture/console/pr01
+all:
+	touch console/pr01
+	touch /home/roman/architecture/mySimpleComputer/sc.o
+	touch /home/roman/architecture/mySimpleComputer/print.o
+	touch /home/roman/architecture/mySimpleComputer/sc_lib.a
+	touch /home/roman/architecture/console/pr01
 
 # /home/roman/architecture/console/pr01: /home/roman/architecture/mySimpleComputer/main.c /home/roman/architecture/mySimpleComputer/sc_lib.a
 # 	gcc -g -Wall -I /home/roman/architecture/include/ -o /home/roman/architecture/console/pr01 /home/roman/architecture/mySimpleComputer/main.c /home/roman/architecture/mySimpleComputer/sc_lib.a
@@ -16,10 +21,7 @@
 # 	cp *.o /home/roman/architecture/mySimpleComputer
 # 	rm *.o
 
-all: build.sh
-	sh build.sh
-
-	.PHONY: clean
+.PHONY: clean
 
 clean:
 	rm /home/roman/architecture/mySimpleComputer/sc*.o
