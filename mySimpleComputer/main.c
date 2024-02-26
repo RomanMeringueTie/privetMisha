@@ -14,8 +14,10 @@ main ()
   sc_icounterInit ();
   for (int i = 0; i < 70; i += 10)
     {
-      if (sc_memorySet (i, i) != 0)
-        return -1;
+      if (sc_memorySet (i, 10 * i) != 0)
+        {
+          return -1;
+        }
     }
   int *value = malloc (sizeof (int));
   for (int i = 0; i < 70; i += 10)
@@ -24,12 +26,13 @@ main ()
       printDecodedCommand (*value);
     }
   printf ("\n");
-  printf ("%d\n", sc_memorySet (127, -1));
-  for (int i = 0; i < 5; i++)
-    sc_regSet (i, i);
+  printf ("%d\n", sc_memorySet (100000000, 0));
+  sc_regSet (1, 1);
+  sc_regSet (2, 1);
+  sc_regSet (5, 1);
   printFlags ();
-  printf ("%d\n", sc_regSet (3, -1));
-  sc_accumulatorSet (15);
+  printf ("%d\n", sc_regSet (-1, 0));
+  sc_accumulatorSet (5093);
   printf ("%d\n", sc_accumulatorSet (-1));
   sc_icounterSet (15);
   printf ("%d\n", sc_icounterSet (-1));
@@ -40,7 +43,7 @@ main ()
   printf ("%d %d %d\n", *sign, *comand, *operand);
   sc_commandDecode (accumulator, sign, comand, operand);
   printf ("%d %d %d\n", *sign, *comand, *operand);
-  sc_commandEncode (0, 14, 30, value);
+  sc_commandEncode (0, 51, 89, value);
   printDecodedCommand (*value);
   free (value);
   return 0;

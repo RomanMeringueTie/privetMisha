@@ -1,6 +1,7 @@
 #include <mySimpleComputer.h>
 
-void printAccumulator(void)
+void
+printAccumulator (void)
 {
-    printf("%d\n", accumulator);
+  printf ("%d\n", accumulator);
 }

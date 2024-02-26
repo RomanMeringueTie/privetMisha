@@ -1,8 +1,8 @@
 #include <mySimpleComputer.h>
 
-
-int sc_icounterInit(void)
+int
+sc_icounterInit (void)
 {
-    command = 0;
-    return 0;
+  command = 0;
+  return 0;
 }

@@ -1,6 +1,7 @@
 #include <mySimpleComputer.h>
 
-void printCounters(void)
+void
+printCounters (void)
 {
-    printf("%d\n", command);
+  printf ("%d\n", command);
 }

@@ -1,7 +1,8 @@
 #include <mySimpleComputer.h>
 
-int sc_regInit(void)
+int
+sc_regInit (void)
 {
-    flag = 0;
-    return 0;
+  flag = 0;
+  return 0;
 }
