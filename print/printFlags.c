@@ -1,8 +1,10 @@
 #include <mySimpleComputer.h>
+#include <myTerm.h>
 
 void
 printFlags (void)
 {
+  mt_gotoXY (30, 150);
   if (flag & 0x1)
     printf ("П ");
   else
