@@ -4,6 +4,7 @@
 void
 printCounters (void)
 {
-  mt_gotoXY (10, 150);
-  printf ("%d\n", command);
+  mt_gotoXY (5, 150);
+  printf ("%d", command);
+  fflush (stdout);
 }

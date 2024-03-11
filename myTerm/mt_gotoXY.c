@@ -67,5 +67,6 @@ mt_gotoXY (int x, int y)
   free (str);
   free (xstr);
   free (ystr);
+  fflush (stdout);
   return (result == len) ? 0 : -1;
 }

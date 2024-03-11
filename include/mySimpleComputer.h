@@ -1,10 +1,10 @@
 #pragma once
 #include <fcntl.h>
 #include <limits.h>
+#include <myTerm.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <myTerm.h>
 
 extern int *ram;
 
@@ -58,6 +58,6 @@ void printAccumulator (void);
 
 void printCounters (void);
 
-void printTerm (int address, int input);
+void printTerm (int address, int input, int n);
 
 void printCommand (void);

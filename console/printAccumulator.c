@@ -4,6 +4,7 @@
 void
 printAccumulator (void)
 {
-  mt_gotoXY (2, 150);
+  mt_gotoXY (1, 150);
   printf ("%d\n", accumulator);
+  fflush (stdout);
 }
