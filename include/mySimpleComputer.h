@@ -1,6 +1,7 @@
 #pragma once
 #include <fcntl.h>
 #include <limits.h>
+#include <myTerm.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -47,7 +48,7 @@ int sc_commandDecode (int value, int *sign, int *command, int *operand);
 
 int sc_commandValidate (int command);
 
-void printCell (int address);
+void printCell (int address, enum colors fg, enum colors bg);
 
 void printFlags (void);
 
@@ -56,3 +57,7 @@ void printDecodedCommand (int value);
 void printAccumulator (void);
 
 void printCounters (void);
+
+void printTerm (int address, int input);
+
+void printCommand (void);
