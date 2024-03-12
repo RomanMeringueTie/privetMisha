@@ -37,3 +37,4 @@ int mt_setbgcolor (enum colors);
 int mt_setdefaultcolor (void);
 int mt_setcursorvisible (int value);
 int mt_delline (void);
+void swap(int *x, int* y);

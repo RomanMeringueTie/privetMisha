@@ -37,20 +37,17 @@ str_replace_3 (char *orig, char *rep, char *with)
   strcpy (tmp, orig);
   return result;
 }
+#include <myTerm.h>
 
 int
 mt_setfgcolor (enum colors x)
 {
   char *str = malloc (100);
-  strcpy (str, "\E[38:5;xm");
-  char *xstr = malloc (4);
-  sprintf (xstr, "%d", x);
-  str = str_replace_3 (str, "x", xstr);
+  sprintf (str, "\E[38:5;%dm", x);
   int fd = open ("/dev/tty", O_RDWR);
   size_t result = write (fd, str, strlen (str));
   size_t len = strlen (str);
   free (str);
-  free (xstr);
   close (fd);
   return (result == len) ? 0 : -1;
 }

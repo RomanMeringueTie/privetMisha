@@ -39,8 +39,7 @@ main ()
       printCell (78, fg_green, bg_white);
       mt_setdefaultcolor ();
       for (int i = 0; i < 7; i++)
-        printTerm (i * 20 + 1, 1, i);
-      printTerm (125, 0, 7);
+        printTerm (i * 20 + 1, 1);
       mt_gotoXY (40, 0);
       return 0;
     }
